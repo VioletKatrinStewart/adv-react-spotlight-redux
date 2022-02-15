@@ -1,6 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment, reset } from './counterSlice';
+import {
+  decrement,
+  increment,
+  reset,
+  randomplus,
+  randomminus,
+} from './counterSlice';
 
 const Counter = () => {
   // The function below is called a selector and allows us to select a value fro
@@ -34,6 +40,23 @@ const Counter = () => {
         }}
       >
         0
+      </button>
+
+      <button
+        aria-label="plus random"
+        onClick={() => {
+          dispatch(randomplus());
+        }}
+      >
+        + random
+      </button>
+      <button
+        aria-label="minus random"
+        onClick={() => {
+          dispatch(randomminus());
+        }}
+      >
+        - random
       </button>
     </div>
   );

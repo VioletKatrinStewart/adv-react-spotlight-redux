@@ -20,10 +20,19 @@ export const counterSlice = createSlice({
     reset: (state) => {
       state.count = 0;
     },
+
+    randomplus: (state) => {
+      state.count += Math.random();
+    },
+
+    randomminus: (state) => {
+      state.count -= Math.random();
+    },
   },
 });
 
-export const { increment, decrement, reset } = counterSlice.actions;
+export const { increment, decrement, reset, randomplus, randomminus } =
+  counterSlice.actions;
 
 //Export the reducer function from the slice
 export default counterSlice.reducer;
